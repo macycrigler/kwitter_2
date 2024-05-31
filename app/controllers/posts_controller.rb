@@ -2,6 +2,9 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.order("id desc")
+    respond_to do | format |
+      format.html 
+      format.json { render :json => posts.to_json }
   end
 
   def create
