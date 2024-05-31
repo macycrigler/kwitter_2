@@ -8,9 +8,9 @@ class PostsController < ApplicationController
       user = user.findby({"id" => post["user_id"]})
         if user 
         posts_json << {
-          "username" => user["username"]
-          "real_name" => user["real_name"]
-          "body" => post["body"]
+          "username" => user["username"],
+          "real_name" => user["real_name"],
+          "body" => post["body"],
           "created_at" => post["created_at"]
         }
       end
